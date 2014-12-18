@@ -1,8 +1,9 @@
 package ru.qatools.school.twister.web.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Created by dima on 14.12.14.
@@ -11,11 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class WebController {
 
     @RequestMapping("/welcome")
-    public String printHello( Model model ) {
-        System.out.println( "Hello, Spring!" );
-        model.addAttribute("message", "Hello, Spring!");
-
-        return "welcome";
+    public ModelAndView welcome(@RequestParam String name ) {
+        return new ModelAndView( "welcome", "message", "Hello, " + name + "!");
     }
 
 }

@@ -5,5 +5,6 @@
 </head>
 <body>
 <h2>Hello Spring MVC</h2>
+<a href="welcome?name=Dima" > Welcome! </a>
 </body>
 </html>
